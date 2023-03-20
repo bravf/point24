@@ -1,5 +1,7 @@
 <style lang="scss" scoped>
 .stage {
+  max-width: 750px;
+  margin: 0 auto;
   .n-button {
     font-size: 40px;
   }
@@ -178,6 +180,8 @@ const countdown = () => {
         content: state.count >= 10 ? "神，大神！" : "继续努力吧!",
         positiveText: "点击重新开始游戏",
         closable: false,
+        closeOnEsc: false,
+        maskClosable: false,
         onPositiveClick: () => {
           doNext();
           state.count = 0;
@@ -195,6 +199,8 @@ dialog.info({
   content: "在5分钟的时间内，试一试能做对几道吧",
   positiveText: "点击开始",
   closable: false,
+  closeOnEsc: false,
+  maskClosable: false,
   onPositiveClick: () => {
     countdown();
   },
